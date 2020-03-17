@@ -7,12 +7,26 @@ class App extends React.Component {
     userName: '',
     userPassword: '',
     userEmail: '',
+    userAccept: false,
+  }
+
+  handleSubmitForm = (e) => {
+    e.preventDefault();
+    console.log('dziala');
+
   }
 
   handleInputChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    })
+    if (e.target.type === 'checkbox') {
+      this.setState({
+        [e.target.name]: e.target.checked
+      })
+    } else {
+      this.setState({
+        [e.target.name]: e.target.value,
+      })
+    }
+
   }
 
   render() {
@@ -21,7 +35,9 @@ class App extends React.Component {
         name={this.state.userName}
         password={this.state.userPassword}
         email={this.state.userEmail}
+        accept={this.state.userAccept}
         change={this.handleInputChange}
+        submit={this.handleSubmitForm}
       />
     );
   }
