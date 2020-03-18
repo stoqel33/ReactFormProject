@@ -68,3 +68,10 @@ span{
   font-size: 15px;
   color:red;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
