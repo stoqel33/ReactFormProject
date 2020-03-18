@@ -2,45 +2,46 @@ import React from 'react';
 import './Form.css';
 
 const Form = ({ name, password, email, accept, send, change, submit, errors }) => (
-  <>
+  <div className="wrapper">
+    <h1>Newsletter</h1>
     <form onSubmit={submit} noValidate>
       <label htmlFor="name">
-        Name:
-      <input
+        <input
           type="text"
           id="name"
           name="userName"
           value={name}
           onChange={change}
+          placeholder="Name"
         />
-        {errors.name && <span> bład </span>}
+        {errors.name && <span>*</span>}
       </label>
 
       <label htmlFor="password">
-        Password:
-      <input
+        <input
           type="password"
           id="password"
           name="userPassword"
           value={password}
           onChange={change}
+          placeholder="Password"
         />
-        {errors.pass && <span> błąd </span>}
+        {errors.pass && <span>*</span>}
       </label>
 
       <label htmlFor="email">
-        Email:
-      <input
+        <input
           type="email"
           id="emial"
           name="userEmail"
           value={email}
           onChange={change}
+          placeholder="Email"
         />
-        {errors.email && <span> błąd </span>}
+        {errors.email && <span>*</span>}
       </label>
 
-      <label htmlFor="accept">
+      <label htmlFor="accept" className="check">
         <input
           type="checkbox"
           name="userAccept"
@@ -48,15 +49,13 @@ const Form = ({ name, password, email, accept, send, change, submit, errors }) =
           checked={accept}
           onChange={change}
         />
-        {errors.accept && <span> błąd </span>}
       I accept all rules!
-    </label>
-
+        {errors.accept && <span>*</span>}
+      </label>
       <button>Join in!</button>
-
     </form>
-    {send && <h1>Wysłano</h1>}
-  </>
+    {send && <h1>Got it!</h1>}
+  </div>
 )
 
 export default Form;

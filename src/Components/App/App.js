@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Form from '../Form/Form';
 
 class App extends React.Component {
@@ -67,7 +66,7 @@ class App extends React.Component {
       this.state.userName.indexOf(' ') === -1) {
       name = true;
     };
-    if (this.state.userEmail.indexOf('@') != -1 &&
+    if (this.state.userEmail.indexOf('@') !== -1 &&
       this.state.userEmail.length > 6) {
       email = true;
     };
