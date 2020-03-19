@@ -14,6 +14,5 @@ body {
   justify-content: center;
   align-items: center;
 
-  max-width: inherit;
-  max-height: inherit;
+  overflow: hidden;
 }

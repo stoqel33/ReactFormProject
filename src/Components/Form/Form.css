@@ -9,6 +9,20 @@
   border-radius: 1%;
 }
 
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    width: 85vw;
+    height: 80vh;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
 h1{
   margin: 40px 0 80px;
 }
