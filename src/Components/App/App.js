@@ -1,9 +1,6 @@
 import React from 'react';
 import Form from '../Form/Form';
 
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
 class App extends React.Component {
   state = {
     userName: '',
@@ -24,8 +21,6 @@ class App extends React.Component {
     e.preventDefault();
 
     const validationCheck = this.validationForm();
-    console.log(validationCheck);
-
 
     if (validationCheck.validation) {
       console.log('dziala');
@@ -64,13 +59,14 @@ class App extends React.Component {
     let email = false;
     let accept = false;
     let validation = false;
+    var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 
     if (this.state.userName.length > 6 &&
       this.state.userName.indexOf(' ') === -1) {
       name = true;
     };
-    if (this.state.userEmail.indexOf('@') !== -1 &&
-      this.state.userEmail.length > 6) {
+    if (reg.test(this.state.userEmail)) {
       email = true;
     };
     if (this.state.userPassword.length > 6) {
